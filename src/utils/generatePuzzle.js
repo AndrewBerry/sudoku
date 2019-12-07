@@ -8,10 +8,12 @@ const difficulties = [
   "Hard"
 ]
 
-export function generatePuzzle(difficultyIndex) {
+export function generatePuzzle(difficultyIndex, seed) {
   const originalMathRandom = Math.random;
-  Math.random = createPRNGGenerator(20191207);
+  Math.random = createPRNGGenerator(seed);
+
   const puzzle = getSudoku(difficulties[difficultyIndex]);
+  
   Math.random = originalMathRandom;
 
   return puzzle.map(
