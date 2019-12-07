@@ -1,0 +1,16 @@
+.Button {
+  padding: 5px;
+  border: 1px solid #000;
+  background: none;
+  outline: none;
+}
+
+.Button--isActive {
+  color: #fff;
+  background-color: #00f;
+}
+
+.Button--isDisabled {
+  color: #666;
+  background-color: #ddd;
+}

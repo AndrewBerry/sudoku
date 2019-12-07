@@ -1,0 +1,76 @@
+.Cell {
+  display: grid;
+  grid-template-areas:
+    "_1 _2 _3"
+    "_4 _5 _6"
+    "_7 _8 _9";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  padding: 2px;
+
+  border-color: #ccc;
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+}
+
+.Cell[data-x="0"] {
+  border-left-width: 1px;
+  border-left-color: #000;
+}
+.Cell[data-y="0"] {
+  border-top-width: 1px;
+  border-top-color: #000;
+}
+.Cell[data-x="2"],
+.Cell[data-x="5"],
+.Cell[data-x="8"] {
+  border-right-width: 1px;
+  border-right-color: #000;
+}
+.Cell[data-y="2"],
+.Cell[data-y="5"],
+.Cell[data-y="8"] {
+  border-bottom-width: 1px;
+  border-bottom-color: #000;
+}
+
+.Cell--isSelected {
+  background-color: #00c;
+  color: #fff;
+}
+
+.Cell--isHighlighted {
+  background-color: #cdfbcd;
+}
+
+.Cell__value {
+  grid-row-start: 1;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 4;
+
+  text-align: center;
+  align-self: center;
+  font-size: 1.8em;
+  line-height: 1;
+}
+
+.Cell__value--isReadOnly {
+  font-weight: bold;
+}
+
+.Cell__value--isError {
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+.Cell__candidate {
+  font-size: 0.5em;
+  line-height: 1;
+}
+
+.Cell__candidate[data-cx="1"] { text-align: center; }
+.Cell__candidate[data-cx="2"] { text-align: right; }
+.Cell__candidate[data-cy="1"] { align-self: center; }
+.Cell__candidate[data-cy="2"] { align-self: end; }

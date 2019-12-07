@@ -1,0 +1,29 @@
+.InsertModeIcon {
+  position: relative;
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: text-bottom;
+  border: 1px solid #000;
+}
+
+.InsertModeIcon:after {
+  content: "";
+
+  position: absolute;  
+  top: 0;
+  left: 0;
+
+  border: 1px solid #fff;
+  background-color: #000;
+}
+
+.InsertModeIcon--candidate:after {
+  width: 6px;
+  height: 6px;
+}
+
+.InsertModeIcon--value:after {
+  width: 100%;
+  height: 100%;
+}
