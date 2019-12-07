@@ -3,11 +3,11 @@ import React, { useEffect } from "react";
 import { App } from "./App";
 
 import { useGameState } from "../../hooks/useGameState";
-import { createBlankBoard } from "../../utils/createBlankBoard";
+import { generatePuzzle } from "../../utils/generatePuzzle";
 
 export function AppContainer() {
   const {
-    setBoard,
+    newGame,
     selectCell,
     toggleWriteMode,
     toggleValue,
@@ -18,7 +18,7 @@ export function AppContainer() {
   } = useGameState();
 
   useEffect(() => {
-    setBoard(createBlankBoard());
+    newGame(0);
   }, []);
 
   return (
@@ -26,10 +26,10 @@ export function AppContainer() {
       board={board}
       selectedCell={selectedCell}
       isInsertingValue={isInsertingValue}
-
       selectCell={selectCell}
       toggleWriteMode={toggleWriteMode}
       toggleValue={toggleValue}
+      newGame={newGame}
     />
   );
 }

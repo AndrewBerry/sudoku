@@ -2,3 +2,18 @@
   max-width: 315px;
   margin: 30px auto;
 }
+
+.App__header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 1em;
+}
+
+.App__title {
+  margin: 0;
+}
+
+.App__newGameContainer {
+  text-align: right;
+  align-self: flex-end;
+}

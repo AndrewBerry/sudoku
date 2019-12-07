@@ -1,4 +1,6 @@
 import React from "react";
+
+import { NewGameButtonContainer } from "../NewGameButton/NewGameButtonContainer";
 import { Board } from "../Board/Board";
 import { ControlsContainer } from "../Controls/ControlsContainer";
 
@@ -8,6 +10,7 @@ export function App({
   selectCell,
   toggleWriteMode,
   toggleValue,
+  newGame,
 
   board,
   selectedCell,
@@ -15,6 +18,13 @@ export function App({
 }) {
   return (
     <div className="App">
+      <header className="App__header">
+        <h1 className="App__title">Sudoku</h1>
+        <div className="App__newGameContainer">
+          <NewGameButtonContainer newGame={newGame} />
+        </div>
+      </header>
+
       <Board board={board} selectedCell={selectedCell} selectCell={selectCell} />
       
       <ControlsContainer
