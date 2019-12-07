@@ -1,3 +1,5 @@
+import { saveBoard } from "../utils/saveBoard";
+
 export function handleToggleValueAction(state, { value }) {
   const { isInsertingValue, selectedCell, board: oldBoard } = state;
 
@@ -22,6 +24,8 @@ export function handleToggleValueAction(state, { value }) {
     board[y][x].candidates[value] = !board[y][x].candidates[value];
   }
 
+  saveBoard(board);
+  
   return {
     ...state,
     board

@@ -24,6 +24,10 @@ export function useGameState() {
       dispatch({ type: TOGGLE_WRITE_MODE_ACTION });
     },
 
+    setBoard(board) {
+      dispatch({ type: SET_BOARD_ACTION, board });
+    },
+
     newGame(difficultyIndex, seed = Math.random() * 100000000) {
       dispatch({
         type: SET_BOARD_ACTION,

@@ -8,6 +8,7 @@ import { generatePuzzle } from "../../utils/generatePuzzle";
 export function AppContainer() {
   const {
     newGame,
+    setBoard,
     selectCell,
     toggleWriteMode,
     toggleValue,
@@ -18,6 +19,12 @@ export function AppContainer() {
   } = useGameState();
 
   useEffect(() => {
+    const savedBoard = window.localStorage.getItem("sudoku");
+    if (savedBoard) {
+      setBoard(JSON.parse(savedBoard));
+      return;
+    }
+
     newGame(0);
   }, []);
 
